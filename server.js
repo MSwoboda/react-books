@@ -17,6 +17,11 @@ app.use(routes);
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
-mongoose.connect("mongodb://heroku_p595vcpv:qMPBJsE!9t6Ddnz@ds031741.mlab.com:31741/heroku_p595vcpv");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {useNewUrlParser: true});
 
 app.listen(PORT, () => console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`));
+// heroku config:set MONGOLAB_URI=mongodb://googlebooks:qMPBJsE!9t6Ddnz@ds031741.mlab.com:31741/heroku_p595vcpv/googlebooks
+
+
+heroku config:set MONGOLAB_URI=mongodb://googlebooks:qMPBJsE!9t6Ddnz@ds031741.mlab.com:31741/heroku_p595vcpv
+// mongodb://<dbuser>:<dbpassword>@ds031741.mlab.com:31741/heroku_p595vcpv   ssssss  "mongodb://googlebooks:qMPBJsE!9t6Ddnz@ds031741.mlab.com:31741/heroku_p595vcpv/googlebooks"
