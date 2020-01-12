@@ -10,11 +10,13 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <div>
+
       <Router>
       <div>
         <NavTabs />
-        <Route exact path="/" component={Saved} />
-        <Route exact path="/search" component={Search} />
+        <Route exact path="/saved" component={Saved} />
+        <Route exact path="/" component={Search} />
+
       </div>
     </Router>
 
